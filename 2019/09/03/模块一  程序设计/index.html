@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,试题,算法,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="J1-1《小学生数学辅助学习系统》任务一：实现趣味试题 1 的关键算法（30 分）通过键盘输入某年某月某日，计算并输出这一天是这一年的第几天。例如，2001 年 3月 5 日是这一年的第 64 天。注意：使用分支结构语句实现。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
+<meta name="keywords" content="Java,试题,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块一  程序设计">
+<meta property="og:url" content="https://18067359131.github.io/2019/09/03/模块一  程序设计/index.html">
+<meta property="og:site_name" content="不是山谷">
+<meta property="og:description" content="J1-1《小学生数学辅助学习系统》任务一：实现趣味试题 1 的关键算法（30 分）通过键盘输入某年某月某日，计算并输出这一天是这一年的第几天。例如，2001 年 3月 5 日是这一年的第 64 天。注意：使用分支结构语句实现。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://18067359131.github.io/images/images1.png">
+<meta property="og:image" content="https://18067359131.github.io/images/images2.png">
+<meta property="og:image" content="https://18067359131.github.io/images/images3.png">
+<meta property="og:image" content="https://18067359131.github.io/images/images4.png">
+<meta property="og:image" content="https://18067359131.github.io/images/images5.png">
+<meta property="og:updated_time" content="2019-10-07T05:13:21.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块一  程序设计">
+<meta name="twitter:description" content="J1-1《小学生数学辅助学习系统》任务一：实现趣味试题 1 的关键算法（30 分）通过键盘输入某年某月某日，计算并输出这一天是这一年的第几天。例如，2001 年 3月 5 日是这一年的第 64 天。注意：使用分支结构语句实现。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
+<meta name="twitter:image" content="https://18067359131.github.io/images/images1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://18067359131.github.io/2019/09/03/模块一  程序设计/">
+
+
+
+
+
+  <title>模块一  程序设计 | 不是山谷</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不是山谷</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你不是山谷，所以我不怪你，没有回音。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://18067359131.github.io/2019/09/03/模块一  程序设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山谷">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/725f8fcc9a8f418596015e397d26f477!400x400.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不是山谷">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">模块一  程序设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T13:08:20+08:00">
+                2019-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="J1-1《小学生数学辅助学习系统》"><a href="#J1-1《小学生数学辅助学习系统》" class="headerlink" title="J1-1《小学生数学辅助学习系统》"></a>J1-1《小学生数学辅助学习系统》</h2><h3 id="任务一：实现趣味试题-1-的关键算法（30-分）"><a href="#任务一：实现趣味试题-1-的关键算法（30-分）" class="headerlink" title="任务一：实现趣味试题 1 的关键算法（30 分）"></a>任务一：实现趣味试题 1 的关键算法（30 分）</h3><p>通过键盘输入某年某月某日，计算并输出这一天是这一年的第几天。例如，2001 年 3月 5 日是这一年的第 64 天。<br>注意：使用分支结构语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">package ex1;</span><br><span class="line"> </span><br><span class="line">import java.util.*;</span><br><span class="line"> </span><br><span class="line">public class ex1_1 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int year;  //年份</span><br><span class="line">        int month;  //月份</span><br><span class="line">        int day;  //日</span><br><span class="line">        int days;    //累计天数</span><br><span class="line">        int d=0;</span><br><span class="line">        int e = 0;</span><br><span class="line">        Scanner scanner = new Scanner(System.in);</span><br><span class="line">            System.out.print(&quot;输入年:&quot;);</span><br><span class="line">            year = scanner.nextInt();</span><br><span class="line">            System.out.print(&quot;输入月:&quot;);</span><br><span class="line">            month = scanner.nextInt();</span><br><span class="line">            System.out.print(&quot;输入日:&quot;);</span><br><span class="line">            day = scanner.nextInt();</span><br><span class="line">            days=day;</span><br><span class="line">        for (int i = 1; i &lt;month; i++) &#123;</span><br><span class="line">            switch (i) &#123;</span><br><span class="line">            case 1:</span><br><span class="line">            case 3:</span><br><span class="line">            case 5:</span><br><span class="line">            case 7:</span><br><span class="line">            case 8:</span><br><span class="line">            case 10:</span><br><span class="line">            case 12: &#123;</span><br><span class="line">                d = 31;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            case 4:</span><br><span class="line">            case 6:</span><br><span class="line">            case 9:</span><br><span class="line">            case 11: &#123;</span><br><span class="line">                d = 30;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            case 2: &#123;</span><br><span class="line">                /**</span><br><span class="line">                 * 闰年:①：非整百年数除以4，无余为闰，有余为平；②整百年数除以400，无余为闰有余平</span><br><span class="line">                 * 二月：平年28天、闰年29天</span><br><span class="line">                 */</span><br><span class="line">                if ((year % 100 !=0 &amp;&amp;year % 4 == 0) || (year % 100 == 0 &amp;&amp; year%400==0)) &#123;</span><br><span class="line">                    d = 29;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    d = 28;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            default:</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            days+=d;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(year+&quot;年&quot;+month+&quot;月&quot;+day+&quot;日&quot;+&quot;是这一年的第&quot;+days+&quot;天&quot;);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现乘法口诀助记功能的关键算法（30-分）"><a href="#任务二：实现乘法口诀助记功能的关键算法（30-分）" class="headerlink" title="任务二：实现乘法口诀助记功能的关键算法（30 分）"></a>任务二：实现乘法口诀助记功能的关键算法（30 分）</h3><p>选择乘法口诀助记功能，输出阶梯形式的 9*9 乘法口诀表，如图 1.1.1 所示。<br><img src="/images/images1.png" alt><br>注意：使用循环结构语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package ex1;</span><br><span class="line"> </span><br><span class="line">public class ex1_2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        for (int i = 1; i &lt;=9; i++) //i*j</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j = 1; j &lt;=i; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.print(j+&quot;*&quot;+i+&quot;=&quot;+(i*j)+&quot;\t&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现趣味试题-2-关键算法（30-分）"><a href="#任务三：实现趣味试题-2-关键算法（30-分）" class="headerlink" title="任务三：实现趣味试题 2 关键算法（30 分）"></a>任务三：实现趣味试题 2 关键算法（30 分）</h3><p>判断一个整数是否为“水仙花数”。所谓“水仙花数”是指一个三位的整数，其各位数字立方和等于该数本身。例如：153 是一个“水仙花数”， 因为 153=13＋53＋33。<br>注意：用带有一个输入参数的函数(或方法)实现，返回值类型为布尔类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package ex1;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class ex1_3 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">         Scanner scan = new Scanner(System.in);// 接收控制台输入信息</span><br><span class="line">            System.out.print(&quot;请输入一个整数：&quot;);</span><br><span class="line">            try &#123;</span><br><span class="line">                int num = scan.nextInt();// 取出控制台输入的信息</span><br><span class="line">      </span><br><span class="line">                if (isDaffodilNumber(num)) &#123;// 调用isDaffodilNumber()方法</span><br><span class="line">                    System.out.println(num + &quot;是水仙花数！&quot;);// 若为true,输出是水仙花数</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    System.out.println(num + &quot;不是水仙花数！&quot;);// 否则,输出不是水仙花数</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                System.out.println(&quot;必须输入整数&quot;);// 捕捉异常,输入的必须为整数,若否,输出必须输入整数</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     // 用于判断一个整数是否是水仙花数</span><br><span class="line"> public static  boolean isDaffodilNumber(int i) &#123;</span><br><span class="line">     boolean flag = true;</span><br><span class="line"> </span><br><span class="line">     int a = i / 100; // 取得百位数</span><br><span class="line">     int b = (i / 10) % 10; // 取得十位数</span><br><span class="line">     int c = i % 10; // 取得个位数</span><br><span class="line">     /*</span><br><span class="line">      * if ((Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3)) != i) &#123;// 若各位数字立方和不等于该数本身</span><br><span class="line">      *       flag = false;// 返回false</span><br><span class="line">      * &#125;</span><br><span class="line">      */</span><br><span class="line">     if (a * a * a + b * b * b + c * c * c != i) &#123;// 若各位数字立方和不等于该数本身</span><br><span class="line">         flag = false;//返回false</span><br><span class="line">     &#125;</span><br><span class="line">     return flag;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-2《帮你算系统》关键算法"><a href="#J1-2《帮你算系统》关键算法" class="headerlink" title="J1-2《帮你算系统》关键算法"></a>J1-2《帮你算系统》关键算法</h2><h3 id="任务一：实现平均成绩计算功能的关键算法（30-分）"><a href="#任务一：实现平均成绩计算功能的关键算法（30-分）" class="headerlink" title="任务一：实现平均成绩计算功能的关键算法（30 分）"></a>任务一：实现平均成绩计算功能的关键算法（30 分）</h3><p>已知某个班有 30 个学生，学习 5 门课程，已知所有学生的各科成绩。请编写程序：分别计算每个学生的平均成绩，并输出。<br>注意：定义一个二维数组 A，用于存放 30 个学生的 5 门成绩。定义一个一维数组 B，用于存放每个学生的 5 门课程的平均成绩。<br>①使用二重循环，将每个学生的成绩输入到二维数组 A 中。<br>②使用二重循环，对已经存在于二维数组 A 中的值进行平均分计算，将结果保存到一维数组 B 中。<br>③使用循环输出一维数组 B（即平均分）的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package ex2;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class ex2_1 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">          int[][] A = new int[30][5];  //存放30个学生5门成绩</span><br><span class="line">          Scanner s=new Scanner(System.in);</span><br><span class="line">          int[] B = new int[30];// 存放每个学生的5门课程的平均成绩</span><br><span class="line">          int [] total=new int[30];// 存放每个学生的5门课程的总成绩</span><br><span class="line">          int i, j, k = 0;</span><br><span class="line">        // ***********输入每个学生的每门课程的成绩***************</span><br><span class="line">          for (i = 0; i &lt;A.length; i++)</span><br><span class="line">           &#123;</span><br><span class="line">              System.out.println(&quot;输入第&quot;+(i+1)+&quot;个学生的5门课成绩&quot;);</span><br><span class="line">              for (j = 0; j &lt;A[i].length; j++)// 初始化数组</span><br><span class="line">                  A[i][j]=s.nextInt();</span><br><span class="line">           &#125;</span><br><span class="line">          // ******************计算每个学生的5门课程的平均分*****************</span><br><span class="line">          for (i = 0; i &lt;A.length; i++) &#123;</span><br><span class="line">              total[i]=0;</span><br><span class="line">           for (j = 0; j &lt;A[i].length; j++) &#123;</span><br><span class="line">            total[i] += A[i][j];</span><br><span class="line">           &#125;</span><br><span class="line">            B[i]=total[i]/ 5;</span><br><span class="line">          &#125;</span><br><span class="line">        // ******************输出每个学生的5门课程的平均分***************** </span><br><span class="line">          for (i = 0; i &lt;B.length; i++)</span><br><span class="line">              System.out.println(&quot;第&quot;+(i+1)+&quot;个学生5门课程的平均分为:&quot;+B[i]);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现阶乘计算功能关键算法（30-分）"><a href="#任务二：实现阶乘计算功能关键算法（30-分）" class="headerlink" title="任务二：实现阶乘计算功能关键算法（30 分）"></a>任务二：实现阶乘计算功能关键算法（30 分）</h3><p>输入一个整数 n，计算并输出他的阶乘。<br>注意：定义一个函数(或方法)，用于求阶乘的值。<br>在主函数(或主方法)中调用该递归函数(或方法)，求出 5 的阶乘，并输出结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package ex2;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class ex2_2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int n; //</span><br><span class="line">        int f;//存储n的阶乘</span><br><span class="line">        System.out.println(&quot;请输入一个整数:&quot;);</span><br><span class="line">        Scanner s=new Scanner(System.in);</span><br><span class="line">        n=s.nextInt();</span><br><span class="line">        f=factFor(n);</span><br><span class="line">        System.out.println(n+&quot;的阶乘是:&quot;+f);</span><br><span class="line">    &#125;</span><br><span class="line">   public  static int factFor(int n)&#123;</span><br><span class="line">        int sum = 1;</span><br><span class="line">          </span><br><span class="line">        if(n == 0)&#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">            sum*=i;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现前项列和计算功能关键算法（30-分）"><a href="#任务三：实现前项列和计算功能关键算法（30-分）" class="headerlink" title="任务三：实现前项列和计算功能关键算法（30 分）"></a>任务三：实现前项列和计算功能关键算法（30 分）</h3><p>有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13  …  求出这个数列的前 20 项之和。<br>要求：利用循环计算该数列的和。注意分子分母的变化规律。<br>注意：<br>a1=2,    b1=1,    c1=a1/b1;<br>a2=a1+b1,    b2=a1,    c2=a2/b2;<br>a3=a2+b2,    b3=a2,    c3=a3/b3;<br>…<br>s  =  c1+c2+…+c20;<br>s 即为分数序列：2/1，3/2，5/3，8/5，13/8，21/13  …  的前 20 项之和。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package ex2;</span><br><span class="line"> </span><br><span class="line">public class ex2_3 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         double sum = 0;</span><br><span class="line">            double n1 =2;</span><br><span class="line">            double n2 = 1;</span><br><span class="line">            double sn = 0;</span><br><span class="line">            for (int i = 0; i &lt;20; i++) &#123;</span><br><span class="line">                sum += n1/n2;</span><br><span class="line">                sn = n1+n2;</span><br><span class="line">                n2 = n1;</span><br><span class="line">                n1 = sn;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(sum);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-3《网络选拔赛题库系统》关键算法"><a href="#J1-3《网络选拔赛题库系统》关键算法" class="headerlink" title="J1-3《网络选拔赛题库系统》关键算法"></a>J1-3《网络选拔赛题库系统》关键算法</h2><h3 id="任务一：实现平均成绩计算功能的关键算法（30-分）-1"><a href="#任务一：实现平均成绩计算功能的关键算法（30-分）-1" class="headerlink" title="任务一：实现平均成绩计算功能的关键算法（30 分）"></a>任务一：实现平均成绩计算功能的关键算法（30 分）</h3><p>从键盘上输入一个整数 N，输出 1~N 之间的素数。<br>注意：用带有一个输入参数的函数(或方法)实现，返回值类型为布尔类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package ex5;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class ex5_2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         Scanner sc=new Scanner(System.in);</span><br><span class="line">         int n = sc.nextInt(); //输入n</span><br><span class="line">         for(int i=1;i&lt;=n;i++)//</span><br><span class="line">         &#123;</span><br><span class="line">             if(IsPrime(i))</span><br><span class="line">                 System.out.print(i+&quot;\t&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">    static boolean IsPrime(int x) //判断是否是素数</span><br><span class="line">    &#123;</span><br><span class="line">        boolean b=false;</span><br><span class="line">        int i;</span><br><span class="line">         for (i = 2; i&lt;x; i++) // 1不是素数，所以直接从2开始循环</span><br><span class="line">         &#123;     </span><br><span class="line">             if(x%i==0) break;</span><br><span class="line">         &#125;</span><br><span class="line">          if (i==x)</span><br><span class="line">               b=true;</span><br><span class="line">        return b;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>任务二：实现统计问题关键算法（30 分）<br>编写一个程序，该程序读取一个字符串，然后输出读取的空格数目。<br>注意：输入字符串的长度不超过 30 个字符（含空格）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">*截取空格</span><br><span class="line">*/</span><br><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.print(&quot;输入字符串:&quot;);</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        System.out.print(fun(s.nextLine()));</span><br><span class="line">    &#125;</span><br><span class="line">    public static int fun(String n) &#123;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (int i = 0; i &lt; n.length(); i++) &#123;</span><br><span class="line">            char sig = n.charAt(i);</span><br><span class="line">            if (sig == &apos; &apos;)</span><br><span class="line">                count++;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现统计问题关键算法（30-分）"><a href="#任务三：实现统计问题关键算法（30-分）" class="headerlink" title="任务三：实现统计问题关键算法（30 分）"></a>任务三：实现统计问题关键算法（30 分）</h3><p>统计给定的 n 个数中，负数、零和正数的个数。对于每组输入数据，输出一行 a,b 和 c，分别表示给定的数据中负数、零和正数的个数。首先输入一个数 n，代表有需要统计的有 n个数，然后输入 n 个数。<br>例如输入：<br>5<br>1  2  3  0  -4<br>输出：<br>1  1  3<br>注意：使用数组和判断语句完成。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Task2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] arr = &#123; 1, 2, 3, 0, -4 &#125;;</span><br><span class="line">        int zero = 0;</span><br><span class="line">        int zheng = 0;</span><br><span class="line">        int fu = 0;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            if (arr[i] == 0) &#123;</span><br><span class="line">                zero++;</span><br><span class="line">            &#125; else if (arr[i] &gt; 0) &#123;</span><br><span class="line">                zheng++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                fu++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        System.out.println(fu + &quot;,&quot; + zero + &quot;,&quot; + zheng);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-4《智能统计系统》关键算法"><a href="#J1-4《智能统计系统》关键算法" class="headerlink" title="J1-4《智能统计系统》关键算法"></a>J1-4《智能统计系统》关键算法</h2><h3 id="任务一：实现评分计算功能关键算法（30-分）"><a href="#任务一：实现评分计算功能关键算法（30-分）" class="headerlink" title="任务一：实现评分计算功能关键算法（30 分）"></a>任务一：实现评分计算功能关键算法（30 分）</h3><p>编写一个应用程序，计算并输出一维数组（9.8，12，45，67，23，1.98，2.55，45）中的最大值、最小值和平均值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">/*</span><br><span class="line">计算并输出一维数组（9.8，12，45，67，23，1.98，2.55，45）</span><br><span class="line">中的最大值、最小值和平均值。</span><br><span class="line">*/</span><br><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        double[] a = &#123;9.8,12,45,67,23,1.98,2.55,45&#125;;</span><br><span class="line">        double max = 0;</span><br><span class="line">        double min = 0;</span><br><span class="line">        double num = 0;</span><br><span class="line">        double average = 0;</span><br><span class="line">        double s;</span><br><span class="line">        for (int i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">             s = a[i];</span><br><span class="line">             if (max&lt;s) &#123;</span><br><span class="line">                max = s;</span><br><span class="line">             &#125;</span><br><span class="line">              </span><br><span class="line">             if (max &gt; s) &#123;</span><br><span class="line">                min = s;</span><br><span class="line">                max = min;</span><br><span class="line">            &#125;</span><br><span class="line">            num = num + s;</span><br><span class="line">            average = num/a.length;</span><br><span class="line">        &#125;</span><br><span class="line">         System.out.print(&quot;最大值:&quot;+max+&quot;\r&quot;);</span><br><span class="line">         System.out.print(&quot;最小值:&quot;+min+&quot;\r&quot;);</span><br><span class="line">         System.out.print(&quot;平均值:&quot;+average);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现小球反弹问题关键算法（30-分）"><a href="#任务二：实现小球反弹问题关键算法（30-分）" class="headerlink" title="任务二：实现小球反弹问题关键算法（30 分）"></a>任务二：实现小球反弹问题关键算法（30 分）</h3><p>一个球从 100 米高度自由落下，每次落地后反弹回原高度的一半，再落下，再反弹。求它在第十次落地时，共经过多少米?第十次反弹多高?<br>注意：使用循环结构语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int h = 100;</span><br><span class="line">        double hi = 0;</span><br><span class="line">        double s = 0;</span><br><span class="line">        for (int i = 1; i &lt;= 10 ; i++) &#123;</span><br><span class="line">            hi = h/(2*i);</span><br><span class="line">            s = s+hi;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(&quot;经过&quot;+s+&quot;米\r&quot;);</span><br><span class="line">        System.out.print(&quot;反弹第十次的高度:&quot;+hi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现打印中国结图案关键算法（30-分）"><a href="#任务三：实现打印中国结图案关键算法（30-分）" class="headerlink" title="任务三：实现打印中国结图案关键算法（30 分）"></a>任务三：实现打印中国结图案关键算法（30 分）</h3><p>由于中国结的形状是菱形图案，所以现在公司需要设计一个打印菱形的方法。<br>从键盘输入一个整数 N，打印出有 N*2-1 行的菱形。<br>例如输入整数 4，则屏幕输出如下菱形。<br><img src="/images/images2.png" alt><br>现要求输入整数为 7，在屏幕中输出相应的菱形。<br>要求：用循环结构语句实现。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line">     </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        System.out.print(&quot;输入整数:&quot;);</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        int n = s.nextInt();</span><br><span class="line">        int row = n*2-1;//行</span><br><span class="line">        int onrow = row/2+1;//上行数</span><br><span class="line">        int downrow = row/2;//下行数</span><br><span class="line">         </span><br><span class="line">         </span><br><span class="line">        for (int i = 1; i &lt;= onrow ; i++) &#123;//打印上行数</span><br><span class="line">            for (int j = 1; j &lt;=onrow-i; j++) //打印空格数</span><br><span class="line">                System.out.print(&quot; &quot;);</span><br><span class="line">            for (int k = 1; k &lt;= 2*i-1; k++) //打印*数</span><br><span class="line">                System.out.print(&quot;*&quot;);</span><br><span class="line">            System.out.println();//换一行</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">        for (int i = 1; i &lt;= downrow; i++) &#123;//打印下行数</span><br><span class="line">            for (int j = 1; j &lt;= i; j++)//打印空格数</span><br><span class="line">                System.out.print(&quot; &quot;);</span><br><span class="line">            for (int k = row-2; k &gt;= 2*i-1; k--)//打印*数</span><br><span class="line">                System.out.print(&quot;*&quot;);</span><br><span class="line">            System.out.println();//换一行</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-5《统计问题处理系统》关键算法"><a href="#J1-5《统计问题处理系统》关键算法" class="headerlink" title="J1-5《统计问题处理系统》关键算法"></a>J1-5《统计问题处理系统》关键算法</h2><h3 id="任务一：实现统计今天是该月的有多少天关键算法（30-分）"><a href="#任务一：实现统计今天是该月的有多少天关键算法（30-分）" class="headerlink" title="任务一：实现统计今天是该月的有多少天关键算法（30 分）"></a>任务一：实现统计今天是该月的有多少天关键算法（30 分）</h3><p>从键盘上输入一个年份值和一个月份值，输出该月的天数。(说明：一年有 12 个月，大月的天数是 31，小月的天数是 30。2 月的天数比较特殊，遇到闰年是 29 天，否则为 28 天。例如，输入 2011、3，则输出 31 天。)<br>注意：使用分支结构语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">package ex6;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class ex6_1 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         Scanner sc=new Scanner(System.in);</span><br><span class="line">         System.out.print(&quot;请输入年份：&quot;);</span><br><span class="line">         int year=sc.nextInt();</span><br><span class="line">         System.out.print(&quot;请输入月份：&quot;);</span><br><span class="line">         int month=sc.nextInt();</span><br><span class="line">         int d=0;</span><br><span class="line">         switch (month) &#123;</span><br><span class="line">         case 1:</span><br><span class="line">         case 3:</span><br><span class="line">         case 5:</span><br><span class="line">         case 7:</span><br><span class="line">         case 8:</span><br><span class="line">         case 10:</span><br><span class="line">         case 12: &#123;</span><br><span class="line">             d = 31;</span><br><span class="line">             break;</span><br><span class="line">         &#125;</span><br><span class="line">         case 4:</span><br><span class="line">         case 6:</span><br><span class="line">         case 9:</span><br><span class="line">         case 11: &#123;</span><br><span class="line">             d = 30;</span><br><span class="line">             break;</span><br><span class="line">         &#125;</span><br><span class="line">         case 2: &#123;</span><br><span class="line">             /**</span><br><span class="line">              * 闰年:①：非整百年数除以4，无余为闰，有余为平；②整百年数除以400，无余为闰有余平</span><br><span class="line">              * 二月：平年28天、闰年29天</span><br><span class="line">              */</span><br><span class="line">             if ((year % 100 !=0 &amp;&amp;year % 4 == 0) || (year % 100 == 0 &amp;&amp; year%400==0)) &#123;</span><br><span class="line">                 d = 29;</span><br><span class="line">             &#125; else &#123;</span><br><span class="line">                 d = 28;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         default:</span><br><span class="line">             break;</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.println(d);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现统计纸片对折关键算法（30-分）"><a href="#任务二：实现统计纸片对折关键算法（30-分）" class="headerlink" title="任务二：实现统计纸片对折关键算法（30 分）"></a>任务二：实现统计纸片对折关键算法（30 分）</h3><p>假设一张足够大的纸，纸张的厚度为 0.5 毫米。请问对折多少次以后，可以达到珠穆朗玛峰的高度(最新数据：8844.43 米)。请编写程序输出对折 次数。<br>注意：使用循环结构语句实现，直接输出结果不计分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package ex6;</span><br><span class="line"> </span><br><span class="line">public class ex6_2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        double h = 8844.43 * 1000;//珠穆朗玛峰的高度为8844.43米</span><br><span class="line">        double p = 0.5;//一张纸一层的厚度为0.5毫米</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for(int a = 0;a &lt;8844;a++)&#123;</span><br><span class="line">        if(p &lt; h)&#123;</span><br><span class="line">        p *= 2;//每折叠一次增加一倍高度</span><br><span class="line">        sum += 1;//折叠一次</span><br><span class="line">        &#125;</span><br><span class="line">        if(p &gt;= h) break;//如果纸的高度等于或高于珠穆朗玛峰的高度就退出循环</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现统计同构数关键算法（30-分）"><a href="#任务三：实现统计同构数关键算法（30-分）" class="headerlink" title="任务三：实现统计同构数关键算法（30 分）"></a>任务三：实现统计同构数关键算法（30 分）</h3><p>编写程序输出 2~99 之间的同构数。同构数是指这个数为该数平方的尾数，例如 5 的平方为 25，6 的平方为 36，25 的平方为 625，则 5、6、25 都为同构数。<br>注意：调用带有一个输入参数的函数(或方法)实现，此函数(或方法)用于判断某个整数是否为同构数，输入参数为一个整型参数，返回值为布尔型（是否为同构数）。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package ex6;</span><br><span class="line"> </span><br><span class="line">public class ex6_3 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for(int i =2; i&lt;=99; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(IsTG(i))</span><br><span class="line">                System.out.print(i+&quot;\t&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    static boolean IsTG(int x)</span><br><span class="line">    &#123;</span><br><span class="line">        boolean b=false;</span><br><span class="line">        if(x&gt;=1 &amp;&amp; x&lt;=9)  //i是1位数时</span><br><span class="line">            &#123;</span><br><span class="line">            if(x== (x*x)%10)   b=true;</span><br><span class="line">            &#125;              </span><br><span class="line">        else if(x&gt;=10 &amp;&amp; x&lt;=99)//i是2位数时</span><br><span class="line">            &#123;</span><br><span class="line">            if(x == (x*x)%100)   b=true;</span><br><span class="line">            &#125;              </span><br><span class="line">        return b;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-6《儿童智力游戏》关键算法"><a href="#J1-6《儿童智力游戏》关键算法" class="headerlink" title="J1-6《儿童智力游戏》关键算法"></a>J1-6《儿童智力游戏》关键算法</h2><h3 id="任务一：实现堆积木游戏功能关键算法（30-分）"><a href="#任务一：实现堆积木游戏功能关键算法（30-分）" class="headerlink" title="任务一：实现堆积木游戏功能关键算法（30 分）"></a>任务一：实现堆积木游戏功能关键算法（30 分）</h3><p>堆积木是小孩子最爱玩的游戏，但是因为小孩子的好奇心（比如误食积木等）导致家长们越不愿意让孩子去玩积木，为了解决这个问题 TX 公司开发了一套 VR 积木游戏，你要做的是将用户堆好的积木在屏幕中显示出来。<br><img src="/images/images3.png" alt><br>注意：使用循环结构语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">public class Test7 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for(int i=1;i&lt;=4;i++) &#123;</span><br><span class="line">             </span><br><span class="line">            for(int j=1;j&lt;=2*i-1;j++)</span><br><span class="line">                System.out.print(&quot;*&quot;);</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现抓娃娃游戏功能关键算法（30-分）"><a href="#任务二：实现抓娃娃游戏功能关键算法（30-分）" class="headerlink" title="任务二：实现抓娃娃游戏功能关键算法（30 分）"></a>任务二：实现抓娃娃游戏功能关键算法（30 分）</h3><p>请你在娃娃机里放十个娃娃，每个娃娃对应一个数字，该数字表示娃娃的大小。要求通过计算能输出最大的娃娃对应的数字，你可以这样做：<br>①定义一个大小为 10 的整形数组 a；<br>②从键盘输入 10 个整数，放置到数组 a 中；<br>③输出数组 a 中的最大值。<br>注意：使用数组、循环结构语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test7 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] a=new int[10];</span><br><span class="line">        int max=0;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入10个数字：&quot;);</span><br><span class="line">        for(int i=0;i&lt;a.length;i++)</span><br><span class="line">            a[i]=sc.nextInt();</span><br><span class="line">        max=a[0];</span><br><span class="line">        for(int i=0;i&lt;a.length;i++)</span><br><span class="line">            if(a[i]&gt;max)</span><br><span class="line">                max=a[i];</span><br><span class="line">        System.out.print(&quot;最大的娃娃对应的数字为：&quot;+max);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现算数游戏功能关键算法（30-分）"><a href="#任务三：实现算数游戏功能关键算法（30-分）" class="headerlink" title="任务三：实现算数游戏功能关键算法（30 分）"></a>任务三：实现算数游戏功能关键算法（30 分）</h3><p>游戏主要是这样的，计算正整数 n 每个数位上的数之积，例如 24，它的每个数位上的数字之积为 2  *  4  =  8，现在要求你为 A 公司编写一个计算函数(或方法)fun，将结果放到 c中，并显示输出。作为参考答案。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test7 &#123;</span><br><span class="line"></span><br><span class="line">        public static int fun(int n) &#123;</span><br><span class="line">            int result=1;</span><br><span class="line">            while(n&gt;0) &#123;</span><br><span class="line">                result*=n%10;</span><br><span class="line">                n=n/10;</span><br><span class="line">            &#125;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">            System.out.print(&quot;请输入一个正整数：&quot;);</span><br><span class="line">            Scanner sc=new Scanner(System.in);</span><br><span class="line">            int number=sc.nextInt();</span><br><span class="line">            int s=fun(number);</span><br><span class="line">            System.out.println(&quot;该数字的个数位的乘积为:&quot;+s);</span><br><span class="line">             </span><br><span class="line">     </span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-7《商品销售系统》关键算法"><a href="#J1-7《商品销售系统》关键算法" class="headerlink" title="J1-7《商品销售系统》关键算法"></a>J1-7《商品销售系统》关键算法</h2><h3 id="任务一：实现打折功能关键算法（30-分）"><a href="#任务一：实现打折功能关键算法（30-分）" class="headerlink" title="任务一：实现打折功能关键算法（30 分）"></a>任务一：实现打折功能关键算法（30 分）</h3><p>编写程序计算购买图书的总金额：用户输入图书的定价和购买图书的数量，并分别保存到一个 float 和一个 int 类型的变量中，然后根据用户输入的定价和购买图书的数量，计算购书的总金额并输出。其中，图书销售策略为：正常情况下按 9 折出售，购书数量超过 10本打 8.5 折，超过 100 本打 8 折。<br>要求：使用分支结构实现上述程序功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test8 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        float price;</span><br><span class="line">        int count;</span><br><span class="line">        float discount,money;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;请输入图书的定价：&quot;);</span><br><span class="line">        price=sc.nextFloat();</span><br><span class="line">        System.out.print(&quot;请输入图书的数量：&quot;);</span><br><span class="line">        count=sc.nextInt();</span><br><span class="line">        if(count&gt;=100)</span><br><span class="line">            discount=0.8f;</span><br><span class="line">        else if(count&gt;=10)</span><br><span class="line">            discount=0.85f;</span><br><span class="line">        else</span><br><span class="line">            discount=0.9f;</span><br><span class="line">        money=price*count*discount;</span><br><span class="line">        System.out.println(&quot;您本次购书的总金额为：&quot;+money);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现查询功能关键算法（30-分）"><a href="#任务二：实现查询功能关键算法（30-分）" class="headerlink" title="任务二：实现查询功能关键算法（30 分）"></a>任务二：实现查询功能关键算法（30 分）</h3><p>所谓回文数是从左至右与从右至左读起来都是一样的数字，如：121 是一个回文数。编写程序，求出 100—200 的范围内所有回文数的和。<br>要求：使用循环结构语句实现，直接输出结果不计分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test8 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String str=&quot; &quot;;</span><br><span class="line">        for(int i=100;i&lt;=200;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(i%10==i/100)</span><br><span class="line">                System.out .print(i+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">                         </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现停电停多久问题关键算法（30-分）"><a href="#任务三：实现停电停多久问题关键算法（30-分）" class="headerlink" title="任务三：实现停电停多久问题关键算法（30 分）"></a>任务三：实现停电停多久问题关键算法（30 分）</h3><p>Lee 的老家住在工业区，日耗电量非常大。<br>今年 7 月，传来了不幸的消息，政府要在 7、8 月对该区进行拉闸限电。政府决定从 7月 1 日起停电，然后隔一天到 7 月 3 日再停电，再隔两天到 7 月 6 日停电，依次下去，每次都比上一次长一天。<br>Lee 想知道自己到家后到底要经历多少天倒霉的停电。请编写程序帮他算一算。<br>注意：从键盘输入放假日期、开学日期，日期限定在 7、8 月份，且开学日期大于放假日期，然后在屏幕上输出停电天数。<br>提示：可以用数组标记停电的日期。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">先算出2个月停电的天数,再算出回家时已过天数中停电的天数,再相减得到的是在家剩下停电的天数</span><br><span class="line">*/</span><br><span class="line">public class Task2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        int month = s.nextInt();</span><br><span class="line">        int day = s.nextInt();</span><br><span class="line">        System.out.print(getDayNum(month, day));</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public static int getDayNum(int month,int day) &#123;</span><br><span class="line">        int n = 1,s1 = 1;</span><br><span class="line">        int m = 1,s2 = 1;</span><br><span class="line">         </span><br><span class="line">        //7,8两个月共需停电的天数n,规律第一天开始停电,后面停电天数比前一天多一天(1,2,3...),2个月停电天数就是(2,4,6...)</span><br><span class="line">        while (s1&lt;=62) &#123;</span><br><span class="line">            s1 = s1 + n;</span><br><span class="line">            n++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(&quot;7,8两个月共需停电的天数:&quot;+n+&quot;\r&quot;);</span><br><span class="line">        //回到家时已过天数中停电的天数,月份只能输入7,8月</span><br><span class="line">        while (s2&lt;=(month-7)*31+day) &#123;</span><br><span class="line">            s2 = s2 + m;</span><br><span class="line">            m++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(&quot;回到家时已过天数中停电的天数:&quot;+m+&quot;\r&quot;);</span><br><span class="line">        //在家剩下停电的天数</span><br><span class="line">        return n-m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-8《成绩分析系统》关键算法"><a href="#J1-8《成绩分析系统》关键算法" class="headerlink" title="J1-8《成绩分析系统》关键算法"></a>J1-8《成绩分析系统》关键算法</h2><h3 id="任务一：实现成绩等级划分功能关键算法（30-分）"><a href="#任务一：实现成绩等级划分功能关键算法（30-分）" class="headerlink" title="任务一：实现成绩等级划分功能关键算法（30 分）"></a>任务一：实现成绩等级划分功能关键算法（30 分）</h3><p>输入一个百分制的成绩 t，将其转换成对应的等级然后输出，具体转换规则如下：<br>90<del>100 为 A<br>80</del>89 为 B<br>70<del>79 为 C<br>60</del>69 为 D<br>0<del>59 为 E<br>要求：如果输入数据不在 0</del>100 范围内，请输出一行：“Score  is  error!”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">*成绩等级划分</span><br><span class="line">*/</span><br><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;输入一个百分制的成绩t:&quot;);</span><br><span class="line">        double t = s.nextDouble();</span><br><span class="line">        int d = (int) (t/10);</span><br><span class="line">        switch (d) &#123;</span><br><span class="line">        case 10:</span><br><span class="line">        case 9:</span><br><span class="line">            System.out.print(&quot;A&quot;);</span><br><span class="line">            break;</span><br><span class="line">        case 8:</span><br><span class="line">            System.out.print(&quot;B&quot;);</span><br><span class="line">            break; </span><br><span class="line">        case 7:</span><br><span class="line">            System.out.print(&quot;C&quot;);</span><br><span class="line">            break;</span><br><span class="line">        case 6:</span><br><span class="line">            System.out.print(&quot;D&quot;);</span><br><span class="line">            break;</span><br><span class="line">        case 5:</span><br><span class="line">        case 4:</span><br><span class="line">        case 3:</span><br><span class="line">        case 2:</span><br><span class="line">        case 1:</span><br><span class="line">        case 0:</span><br><span class="line">            System.out.print(&quot;E&quot;);</span><br><span class="line">            break;     </span><br><span class="line">        default:</span><br><span class="line">            System.out.print(&quot;Score is error!&quot;);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现冒泡游戏功能关键算法（30-分）"><a href="#任务二：实现冒泡游戏功能关键算法（30-分）" class="headerlink" title="任务二：实现冒泡游戏功能关键算法（30 分）"></a>任务二：实现冒泡游戏功能关键算法（30 分）</h3><p>原始数组：a[]={1,9,3,7,4,2,5,0,6,8}<br>排序后：    a[]={0,1,2,3,4,5,6,7,8,9}<br>输出排序后的数组，每个数字之间空一个空格；<br>要求：综合使用分支、循环结构语句实现，直接输出结果不计分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test9 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int a[]=&#123;1,9,3,7,4,2,5,0,6,8&#125;;</span><br><span class="line">        System.out.print(&quot;排序前a[]=&quot;);</span><br><span class="line">        for(int n:a)</span><br><span class="line">            System.out.print(n+&quot; &quot;);</span><br><span class="line">        for(int i=0;i&lt;a.length;i++)</span><br><span class="line">            for(int j=i+1;j&lt;a.length;j++)</span><br><span class="line">                if(a[j]&lt;a[i]) &#123;</span><br><span class="line">                    int t=a[j];</span><br><span class="line">                    a[j]=a[i];</span><br><span class="line">                    a[i]=t;</span><br><span class="line">                &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.print(&quot;排序后a[]=&quot;);</span><br><span class="line">        for(int n:a)</span><br><span class="line">            System.out.print(n+&quot; &quot;);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现数列求和功能关键算法（30-分）"><a href="#任务三：实现数列求和功能关键算法（30-分）" class="headerlink" title="任务三：实现数列求和功能关键算法（30 分）"></a>任务三：实现数列求和功能关键算法（30 分）</h3><p>数列的定义如下：<br>数列的第一项为 n，以后各项为前一项的平方根，输出数列的前 m 项的和。<br>要求：数列的各项均为正数。</p>
+<p>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">数列的第一项为 n,以后各项为前一项的平方根,输出数列的前 m 项的和.</span><br><span class="line">*/</span><br><span class="line">public class Task2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;数列第一项n:&quot;);</span><br><span class="line">        double n = s.nextDouble();</span><br><span class="line">        System.out.print(&quot;共有m项:&quot;);</span><br><span class="line">        int m = s.nextInt();</span><br><span class="line">        double sum = 0;</span><br><span class="line">        for (int i = 0; i &lt; m; i++) &#123;</span><br><span class="line">            sum += n;</span><br><span class="line">            n = Math.sqrt(n);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.printf(&quot;%.2f&quot;,sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-9《字符处理系统》关键算法"><a href="#J1-9《字符处理系统》关键算法" class="headerlink" title="J1-9《字符处理系统》关键算法"></a>J1-9《字符处理系统》关键算法</h2><h3 id="任务一：实现查数功能关键算法（30-分）"><a href="#任务一：实现查数功能关键算法（30-分）" class="headerlink" title="任务一：实现查数功能关键算法（30 分）"></a>任务一：实现查数功能关键算法（30 分）</h3><p>求 n（2&lt;=n&lt;=10）个整数中倒数第二小的数。每一个整数都独立看成一个数，比如，有三个数分别是 1，1，3，那么，第二小的数就是 1。（每个数    均小于 100）说明：首先输入一个整数 n，然后输入 n 个数。请输出第 2 小的数。<br>例如输入：<br>5<br>-5  -10  10  50  80<br>程序输出第 2 小的数：-5<br>注意：使用循环实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">首先输入一个整数 n，然后输入 n 个数。请输出第 2 小的数。</span><br><span class="line">例如输入：</span><br><span class="line">5</span><br><span class="line">-5 -10 10 50 80</span><br><span class="line">程序输出第 2 小的数：-5</span><br><span class="line">*/</span><br><span class="line">public class Task2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.print(&quot;输入一个整数n:&quot;);</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        int n = s.nextInt();</span><br><span class="line">        int[] as = new int[n];</span><br><span class="line">        for (int i = 0; i &lt; as.length; i++)</span><br><span class="line">            as[i] = s.nextInt();</span><br><span class="line">         </span><br><span class="line">        //排序</span><br><span class="line">        for (int i = 0; i &lt; as.length; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; as.length-i-1; j++) &#123;</span><br><span class="line">                if (as[j]&gt;as[j+1]) &#123;</span><br><span class="line">                    int temp = as[j];</span><br><span class="line">                    as[j] = as[j+1];</span><br><span class="line">                    as[j+1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(as));</span><br><span class="line">        System.out.print(&quot;第二小的数:&quot;+as[1]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现统计字符数量功能关键算法（30-分）"><a href="#任务二：实现统计字符数量功能关键算法（30-分）" class="headerlink" title="任务二：实现统计字符数量功能关键算法（30 分）"></a>任务二：实现统计字符数量功能关键算法（30 分）</h3><p>对于给定的一个字符串，统计其中数字字符出现的次数。<br>要求：字符串只能由数字和字符组成。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package jncc;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test10 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int count=0;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;请输入一个字符串(由数字和字符组成):&quot;);</span><br><span class="line">        String str=sc.nextLine();</span><br><span class="line">        if(!str.matches(&quot;[0-9A-Za-z]*&quot;))</span><br><span class="line">            System.out.println(&quot;字符串只能由数字和字母组成&quot;);</span><br><span class="line">        else&#123;</span><br><span class="line">            char[] chs=str.toCharArray();</span><br><span class="line">            for(int i=0;i&lt;str.length();i++)&#123;</span><br><span class="line">                if(chs[i]&gt;=&apos;0&apos; &amp;&amp;chs[i]&lt;=&apos;9&apos;)</span><br><span class="line">                    count++;           </span><br><span class="line">            &#125;</span><br><span class="line">            System.out.print(&quot;该行字符中的数字个数为：&quot;+count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现人工湖关键算法（30分）"><a href="#任务三：实现人工湖关键算法（30分）" class="headerlink" title="任务三：实现人工湖关键算法（30分）"></a>任务三：实现人工湖关键算法（30分）</h3><p>现在，动物园想在新建一个三角形的人工湖，一是为了养鱼美观，二是可以循环水资源。<br>从键盘输入三条边 A、B、C 的边长，请编程判断能否组成一个三角形。<br>要求：A,B,C&lt;1000，如果三条边长 A、B、C能组成三角形的话，输出YES，否则NO。<br>（1）作品提交要求见本模块附录 1<br>（2）实施条件要求见本模块附录 2<br>（3）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package package11;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入三角形的三条边长(小于1000):&quot;);</span><br><span class="line">        int A=sc.nextInt();</span><br><span class="line">        int B=sc.nextInt();</span><br><span class="line">        int C=sc.nextInt();</span><br><span class="line">        if(A&gt;1000||B&gt;1000||C&gt;1000)</span><br><span class="line">            System.out.println(&quot;请输入小于1000的数据&quot;);</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if((A+B)&gt;=C&amp;&amp;(A+C)&gt;=B&amp;&amp;(B+C)&gt;=A)</span><br><span class="line">                System.out.println(&quot;YES&quot;);</span><br><span class="line">            else</span><br><span class="line">                System.out.println(&quot;NO&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-10《手机号码查询系统》关键算法"><a href="#J1-10《手机号码查询系统》关键算法" class="headerlink" title="J1-10《手机号码查询系统》关键算法"></a>J1-10《手机号码查询系统》关键算法</h2><h3 id="任务一：实现手机号计数功能关键算法（30-分）"><a href="#任务一：实现手机号计数功能关键算法（30-分）" class="headerlink" title="任务一：实现手机号计数功能关键算法（30 分）"></a>任务一：实现手机号计数功能关键算法（30 分）</h3><p>从键盘接收一行字符串，字符串中只包含数字和空格，统计其中所有的手机号码数量。比如输入：18711389426  18711389427 输出的结果为：2。<br>注意：使用分支及循环结构完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package package12;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        String str=sc.nextLine();</span><br><span class="line">        if(!str.matches(&quot;[\\d\\s-]+&quot;))</span><br><span class="line">            System.out.println(&quot;字符串中只包含数字和空格&quot;);</span><br><span class="line">        else &#123;</span><br><span class="line">            int count=0;</span><br><span class="line">            String regExp = &quot;^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d&#123;8&#125;$&quot;;</span><br><span class="line">            String[] phone=str.split(&quot; &quot;);</span><br><span class="line">            for(int i=0;i&lt;phone.length;i++)</span><br><span class="line">                if(phone[i].matches(regExp))</span><br><span class="line">                    count++;</span><br><span class="line">            System.out.println(&quot;字符串中包含的手机号码个数为：&quot;+count);       </span><br><span class="line">        &#125;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现连号判断功能关键算法（30-分）"><a href="#任务二：实现连号判断功能关键算法（30-分）" class="headerlink" title="任务二：实现连号判断功能关键算法（30 分）"></a>任务二：实现连号判断功能关键算法（30 分）</h3><p>从键盘接收一个十一位的数字，判断其是否为尾号5连的手机号。规则：第1位是1，第二位可以是数字358其中之一，后面4位任意数字，最后5位为任意相同的数字。例如：<br>18601088888、13912366666 则满足。<br>注意：不满足的输出“false”，满足要求的输出“true”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package package12;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        String str=sc.nextLine();</span><br><span class="line">        if(!str.matches(&quot;\\d&#123;11&#125;$&quot;))</span><br><span class="line">            System.out.println(&quot;请输入11位数字&quot;);</span><br><span class="line">        else &#123;</span><br><span class="line">            if(str.matches(&quot;^1[3|5|8][0-9]\\d&#123;3&#125;([0-9])\\1&#123;4&#125;&quot;))</span><br><span class="line">                System.out.print(&quot;true&quot;);</span><br><span class="line">            else</span><br><span class="line">                System.out.print(&quot;false&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现统计非数字功能关键算法（30-分）"><a href="#任务三：实现统计非数字功能关键算法（30-分）" class="headerlink" title="任务三：实现统计非数字功能关键算法（30 分）"></a>任务三：实现统计非数字功能关键算法（30 分）</h3><p>对于给定的一个字符串，统计其中非数字字符出现的次数。<br>例如：输入：Ab(&amp;%123)  输出：6<br>注意：使用循环和判断语句实现。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package package12;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int count=0;</span><br><span class="line">        System.out.print(&quot;请输入一个字符串:&quot;);</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        String str=sc.nextLine();</span><br><span class="line">        char[] chs=str.toCharArray();</span><br><span class="line">        for(int i=0;i&lt;chs.length;i++)</span><br><span class="line">            if(chs[i]&lt;&apos;0&apos;||chs[i]&gt;&apos;9&apos;)</span><br><span class="line">                    count++;   </span><br><span class="line">        System.out.println(&quot;该字符串中非数字字符出现次数为:&quot;+count);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-11《图形打印系统》关键算法"><a href="#J1-11《图形打印系统》关键算法" class="headerlink" title="J1-11《图形打印系统》关键算法"></a>J1-11《图形打印系统》关键算法</h2><h3 id="任务一：实现打印功能-1-关键算法（30-分）"><a href="#任务一：实现打印功能-1-关键算法（30-分）" class="headerlink" title="任务一：实现打印功能 1 关键算法（30 分）"></a>任务一：实现打印功能 1 关键算法（30 分）</h3><p>从键盘接收一个整数 n，请打印一个由“*”号组成的长度和宽度均为 n 的空心矩形。<br>例如输入：4 你要在屏幕打印如下图形：<br><img src="/images/images4.png" alt><br>注意：使用嵌套循环语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task1 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入一个整数：&quot;);</span><br><span class="line">        int n=sc.nextInt();</span><br><span class="line">        sc.close();</span><br><span class="line">         </span><br><span class="line">        String str=&quot;*&quot;;</span><br><span class="line">        for (int i = 0; i &lt;n; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt;n; j++) &#123;</span><br><span class="line">                if (i==0) &#123;</span><br><span class="line">                    System.out.print(str);</span><br><span class="line">                &#125;else if(i==n-1)&#123;</span><br><span class="line">                    System.out.print(str);</span><br><span class="line">                &#125;else if(j==0||j==n-1) &#123;</span><br><span class="line">                    System.out.print(str);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    System.out.print(&quot; &quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现打印功能-2-关键算法（30-分）"><a href="#任务二：实现打印功能-2-关键算法（30-分）" class="headerlink" title="任务二：实现打印功能 2 关键算法（30 分）"></a>任务二：实现打印功能 2 关键算法（30 分）</h3><p>注意输出指定空心正方形。输入第一个数字为边长，第二个字符为组成图形边的字符。<br>例如：输入<br>4  a</p>
+<p>输出<br><img src="/images/images5.png" alt><br>注意：使用嵌套循环实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">           /*int x = 3;</span><br><span class="line">        int y = 10;*/</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入图形边长：&quot;);</span><br><span class="line">        int n = sc.nextInt();</span><br><span class="line">        System.out.println(&quot;请输入组成图形边的字符：&quot;);</span><br><span class="line">        String b = sc.next();</span><br><span class="line">        String str = &quot;*&quot;;</span><br><span class="line">        for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; n; j++) &#123;</span><br><span class="line">                if (i == 0) &#123;</span><br><span class="line">                    System.out.print(b);</span><br><span class="line">                &#125; else if (i == n - 1) &#123;</span><br><span class="line">                    System.out.print(b);</span><br><span class="line">                &#125; else if (j == 0 || j == n - 1) &#123;</span><br><span class="line">                    System.out.print(b);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    System.out.print(&quot; &quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：求前-n-项之和功能关键算法（30-分）"><a href="#任务三：求前-n-项之和功能关键算法（30-分）" class="headerlink" title="任务三：求前 n 项之和功能关键算法（30 分）"></a>任务三：求前 n 项之和功能关键算法（30 分）</h3><p>多项式的描述如下：1  -  1/2  +  1/3  -  1/4  +  1/5  -  1/6  +  …    ，现在要求出该多项式的前 n 项的和。<br>要求：结果保留两位小数。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line"> *</span><br><span class="line">*/</span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;输入多少项n:&quot;);</span><br><span class="line">        int i = 1;//分子</span><br><span class="line">        int n = s.nextInt();</span><br><span class="line">        double a = 0;//前m项奇数项的和</span><br><span class="line">        double b = 0;//前m项偶数项的和</span><br><span class="line">        double sum = 0;</span><br><span class="line">        int a1 = 1;</span><br><span class="line">        for (int j = 1; j &lt;= n; j++) &#123;</span><br><span class="line">            if (j%2!=0) &#123;//奇数</span><br><span class="line">                a = a + (a1 - i/j+1);</span><br><span class="line">                a1 = 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if (j%2==0) &#123;</span><br><span class="line">                b = b + i/j+1;</span><br><span class="line">            &#125;</span><br><span class="line">            sum = sum + a+b;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.format(&quot;%.2f&quot;,sum).println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-12《歌手大赛系统》关键算法"><a href="#J1-12《歌手大赛系统》关键算法" class="headerlink" title="J1-12《歌手大赛系统》关键算法"></a>J1-12《歌手大赛系统》关键算法</h2><h3 id="任务一：实现计算平均分功能关键算法（30-分）"><a href="#任务一：实现计算平均分功能关键算法（30-分）" class="headerlink" title="任务一：实现计算平均分功能关键算法（30 分）"></a>任务一：实现计算平均分功能关键算法（30 分）</h3><p>小明今天参加了“校园歌手大赛”，评委的打分规则是去掉一个最低分和一个最高分后算出剩下分数的平均分，你能帮助小明快速的算出平均分吗？    （评委数量必须大于 2）输入说明：首先输入一个整数 n，代表评委人数，然后输入 n 个数。请按照题目的计算规则计算出平均分然后输出。<br>例如输入：<br>6<br>100  90  90  80  85  95<br>按照题目注意计算平均分并输出：<br>90.0<br>注意：使用循环和数组实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">/*</span><br><span class="line"> </span><br><span class="line">*/</span><br><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        int n = s.nextInt();//评委个数</span><br><span class="line">        double[] arry = new double[n];</span><br><span class="line">        for (int i = 0; i &lt; n; i++)</span><br><span class="line">            arry[i] = s.nextDouble();//分数</span><br><span class="line">         </span><br><span class="line">        //排序</span><br><span class="line">        double temp = 0;</span><br><span class="line">        for (int i = 0; i &lt; arry.length; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; arry.length-i-1; j++) &#123;</span><br><span class="line">                if (arry[j]&lt;arry[j+1]) &#123;</span><br><span class="line">                    temp = arry[j];</span><br><span class="line">                    arry[j] = arry[j+1];</span><br><span class="line">                    arry [j+1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">        System.out.println(Arrays.toString(arry));</span><br><span class="line">         </span><br><span class="line">        //去掉第一个和最后一个</span><br><span class="line">        ArrayList&lt;Double&gt; aList = new ArrayList&lt;&gt;();</span><br><span class="line">        for (int i = 1; i &lt; arry.length-1; i++) &#123;</span><br><span class="line">            aList.add(arry[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(aList.toString()+&quot;\r&quot;);</span><br><span class="line">         </span><br><span class="line">        //遍历数组</span><br><span class="line">        double sum = 0;//和</span><br><span class="line">        int size = aList.size();//分数个数</span><br><span class="line">        double avg;</span><br><span class="line">        for (Double double1 : aList)</span><br><span class="line">            sum += double1;</span><br><span class="line">        avg = sum/size;</span><br><span class="line">        System.out.print(avg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现查数功能关键算法（30-分）"><a href="#任务二：实现查数功能关键算法（30-分）" class="headerlink" title="任务二：实现查数功能关键算法（30 分）"></a>任务二：实现查数功能关键算法（30 分）</h3><p>求 n（2&lt;=n&lt;=10）个整数中倒数第二小的数。每一个整数都独立看成一个数，比如，有三个数分别是 1，1，3，那么，第二小的数就是 1。（每个数    均小于 100）说明：首先输入一个整数 n，然后输入 n 个数。请输出第 2 小的数。<br>例如输入：<br>5<br>-5  -10  10  50  80<br>程序输出第 2 小的数：-5<br>注意：使用循环实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">首先输入一个整数 n，然后输入 n 个数。请输出第 2 小的数。</span><br><span class="line">例如输入：</span><br><span class="line">5</span><br><span class="line">-5 -10 10 50 80</span><br><span class="line">程序输出第 2 小的数：-5</span><br><span class="line">*/</span><br><span class="line">public class Task2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.print(&quot;输入一个整数n:&quot;);</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        int n = s.nextInt();</span><br><span class="line">        int[] as = new int[n];</span><br><span class="line">        for (int i = 0; i &lt; as.length; i++)</span><br><span class="line">            as[i] = s.nextInt();</span><br><span class="line">         </span><br><span class="line">        //排序</span><br><span class="line">        for (int i = 0; i &lt; as.length; i++) &#123;</span><br><span class="line">            for (int j = 0; j &lt; as.length-i-1; j++) &#123;</span><br><span class="line">                if (as[j]&gt;as[j+1]) &#123;</span><br><span class="line">                    int temp = as[j];</span><br><span class="line">                    as[j] = as[j+1];</span><br><span class="line">                    as[j+1] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(as));</span><br><span class="line">        System.out.print(&quot;第二小的数:&quot;+as[1]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现趣味英语试题-1-关键算法（30-分）"><a href="#任务三：实现趣味英语试题-1-关键算法（30-分）" class="headerlink" title="任务三：实现趣味英语试题 1 关键算法（30 分）"></a>任务三：实现趣味英语试题 1 关键算法（30 分）</h3><p>已知字符串数组 A，包含初始数据：a1,a2,a3,a4,a5；字符串数组 B，包含初始数据：b1,b2,b3,b4,b5。编写程序将数组 A、B 的每一对应数据项相连接，然后存入字符串数组 C，并输出数组 C。输出结果为：a1b1,a2b2,a3b3,a4b4,a5b5。<br>例如：数组 A 的值为{“Hello ” , “Hello ” , “Hello ” , “Hello ” , “Hello ” }，数组 B 的值为{“Jack”  ,  “Tom”  ,  “Lee”  ,  “John”  ,    “Alisa”  }，则输出结果为{“Hello Jack” , “Hello Tom” , “Hello Lee” , “Hello John” , “Hello Alisa” }。<br>注意：定义 2 个字符串数组 A、B，用于存储读取数据。定义数组 C，用于输出结果。<br>①使用循环将数组 A、B 的对应项相连接，结果存入数组 C。<br>②使用循环将数组 C 中的值输出。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line"> </span><br><span class="line">*/</span><br><span class="line">public class Task1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">         </span><br><span class="line">        System.out.print(&quot;输入数组A:&quot;);</span><br><span class="line">        String[] A = new String[5];</span><br><span class="line">        for (int i = 0; i &lt; A.length; i++)</span><br><span class="line">            A[i] = s.next();</span><br><span class="line">         </span><br><span class="line">        System.out.print(&quot;输入数组B:&quot;);</span><br><span class="line">        String[] B = new String[5];</span><br><span class="line">        for (int i = 0; i &lt; B.length; i++)</span><br><span class="line">            B[i] = s.next();</span><br><span class="line">         </span><br><span class="line">        System.out.print(Arrays.toString(A)+&quot;\r&quot;);</span><br><span class="line">        System.out.print(Arrays.toString(B)+&quot;\r&quot;);</span><br><span class="line">     </span><br><span class="line">        String[] C = new String[5];</span><br><span class="line">        for (int i = 0; i &lt; C.length; i++) &#123;</span><br><span class="line">            C[i] = A[i]+B[i];</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">        for (int i = 0; i &lt; C.length; i++)</span><br><span class="line">            System.out.print(C[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-13《市场分析系统》关键算法"><a href="#J1-13《市场分析系统》关键算法" class="headerlink" title="J1-13《市场分析系统》关键算法"></a>J1-13《市场分析系统》关键算法</h2><h3 id="任务一：实现销售分析功能关键算法（30-分）"><a href="#任务一：实现销售分析功能关键算法（30-分）" class="headerlink" title="任务一：实现销售分析功能关键算法（30 分）"></a>任务一：实现销售分析功能关键算法（30 分）</h3><p>A 商店准备在今年夏天开始出售西瓜，西瓜的售价如下，20 斤以上的每斤 0.85 元；重于 15 斤轻于等于 20 斤的，每斤 0.90 元；重于 10 斤轻于等于    15 斤的，每斤 0.95 元；重于 5 斤轻于等于 10 斤的，每斤 1.00 元；轻于或等于 5 斤的，每斤 1.05 元。现在为了知道商店是否会盈利要求 A 公司帮忙设计一个输入西瓜的重量和顾客所付钱数，输出应付货款和应找钱数的程序。<br>注意：使用分支结构语句实现，结果保留两位小数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">import java.text.DecimalFormat;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task1 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        DecimalFormat df = new DecimalFormat(&quot;#.00&quot;);</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入斤数和钱&quot;);</span><br><span class="line">        double shuliang = sc.nextDouble();</span><br><span class="line">        double money = sc.nextDouble();</span><br><span class="line">        double qian = count(shuliang);</span><br><span class="line">        double cha = money-qian;</span><br><span class="line">        System.out.println(&quot;应付&quot;+df.format(qian)+&quot;元，应找钱&quot;+df.format(cha)+&quot;元&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public static double count(double shuliang) &#123;</span><br><span class="line">        double sum;</span><br><span class="line">        if(shuliang&lt;=5) &#123;</span><br><span class="line">            sum=shuliang*1.05;</span><br><span class="line">            return sum;</span><br><span class="line">        &#125;else if(shuliang&lt;=10)&#123;</span><br><span class="line">            sum=shuliang*1;</span><br><span class="line">            return sum;</span><br><span class="line">        &#125;else if(shuliang&lt;=15) &#123;</span><br><span class="line">            sum=shuliang*0.95;</span><br><span class="line">            return sum;</span><br><span class="line">        &#125;else if(shuliang&lt;=20) &#123;</span><br><span class="line">            sum=shuliang*0.90;</span><br><span class="line">            return sum;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            sum=shuliang*0.85;</span><br><span class="line">            return sum;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现销售量分析功能关键算法（30-分）"><a href="#任务二：实现销售量分析功能关键算法（30-分）" class="headerlink" title="任务二：实现销售量分析功能关键算法（30 分）"></a>任务二：实现销售量分析功能关键算法（30 分）</h3><p>KJ 学院为全校同学设计一套校服，A 公司有意招标为 A 学校设计服装，职员小 C 在 A校排队时偷偷的看了一眼发现 A 学校学生，5 人一行余 2 人，7    人一行余 3 人，3 人一行余1 人，编写一个程序求该校的学生人数。<br>注意：使用分支、循环结构语句实现，直接输出结果不计分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Task2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for(int i=1;i&gt;0;i++) &#123;</span><br><span class="line">            if(i%5==2&amp;&amp;i%7==3&amp;&amp;i%3==1) &#123;</span><br><span class="line">                System.out.println(&quot;该班级学生总数为：&quot;+i);</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现市场调查数据的恢复功能关键算法（30-分）"><a href="#任务三：实现市场调查数据的恢复功能关键算法（30-分）" class="headerlink" title="任务三：实现市场调查数据的恢复功能关键算法（30 分）"></a>任务三：实现市场调查数据的恢复功能关键算法（30 分）</h3><p>职员小 A 今天犯了一个致命的错误，他一不小心丢失了 X 项目的市场调查结果只记得一个公式  xyz+yzz=532，其中 x、y、z 均为一位数，现在请你帮忙编写一个程序求出 x、y、z分别代表什么数。<br>注意：用带有一个输入参数的函数(或方法)实现，返回值类型为布尔类型。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Task3 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         int x,y,z,t;</span><br><span class="line">            for(x = 1; x &lt; 10; x ++)        // 对x穷举</span><br><span class="line">                for(y = 1; y &lt; 10; y ++)    //对y穷举</span><br><span class="line">                    for(z = 0; z &lt; 10; z ++)//对z穷举</span><br><span class="line">                    &#123;</span><br><span class="line">                        t = x * 100 + y * 10 + z + y *100 + z * 10 + z;// 求和</span><br><span class="line">                        if(t == 532)        //判断和是否为532</span><br><span class="line">                        &#123;</span><br><span class="line">                            System.out.println(&quot;x为&quot;+x+&quot;  y为&quot;+y+&quot;  z为&quot;+z);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-14《几何图形公式记忆系统》关键算法"><a href="#J1-14《几何图形公式记忆系统》关键算法" class="headerlink" title="J1-14《几何图形公式记忆系统》关键算法"></a>J1-14《几何图形公式记忆系统》关键算法</h2><h3 id="任务一：实现图形计算功能-1-关键算法（30-分）"><a href="#任务一：实现图形计算功能-1-关键算法（30-分）" class="headerlink" title="任务一：实现图形计算功能 1 关键算法（30 分）"></a>任务一：实现图形计算功能 1 关键算法（30 分）</h3><p>输入一个正方体的变长（a）计算盒子体积。<br>注意：结果保留两位小数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task1 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入正方体的边长：&quot;);</span><br><span class="line">        int x = sc.nextInt();</span><br><span class="line"> </span><br><span class="line">        volume(x);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    /**</span><br><span class="line">     * 输入正方体的边长，求正方体的体积</span><br><span class="line">     *</span><br><span class="line">     * @return 正方体的体积</span><br><span class="line">     */</span><br><span class="line">    public static int volume(int x) &#123;</span><br><span class="line">        int v = 0;</span><br><span class="line">        v = x * x * x;</span><br><span class="line">        System.out.println(&quot;正方体的体积为：&quot; + v);</span><br><span class="line">        return v;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现图形计算功能2关键算法（30-分）"><a href="#任务二：实现图形计算功能2关键算法（30-分）" class="headerlink" title="任务二：实现图形计算功能2关键算法（30 分）"></a>任务二：实现图形计算功能2关键算法（30 分）</h3><p>输入三个数，分别是圆柱体底圆的高h，半径 r，请你编程求出该圆柱的表面积。<br>注意：PI=3.14，输出结果保留两位小数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import java.text.DecimalFormat;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task2 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入圆柱体的半径：&quot;);</span><br><span class="line">        double r = sc.nextDouble();</span><br><span class="line">        System.out.println(&quot;请输入圆柱体的高：&quot;);</span><br><span class="line">        double h = sc.nextDouble();</span><br><span class="line"> </span><br><span class="line">        volume(r, h);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    /**</span><br><span class="line">     * 键盘输入圆柱体的高的半径，求圆柱体的体积</span><br><span class="line">     *</span><br><span class="line">     * @param r</span><br><span class="line">     *            圆柱体的半径</span><br><span class="line">     * @param h</span><br><span class="line">     *            圆柱体的高</span><br><span class="line">     * @return 圆柱体的体积</span><br><span class="line">     */</span><br><span class="line">    public static double volume(double r, double h) &#123;</span><br><span class="line">        double v = 0;</span><br><span class="line">        v = 3.14 * r * r * h;</span><br><span class="line">        DecimalFormat df = new DecimalFormat(&quot;######0.00&quot;);</span><br><span class="line">        System.out.println(&quot;圆柱体的体积为：&quot; + df.format(v));</span><br><span class="line">        return v;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现图形计算功能-3-关键算法（30-分）"><a href="#任务三：实现图形计算功能-3-关键算法（30-分）" class="headerlink" title="任务三：实现图形计算功能 3 关键算法（30 分）"></a>任务三：实现图形计算功能 3 关键算法（30 分）</h3><p>输入三个数，分别是三角形的三条边 a，b，c，请你编程求出该三角形边长。<br>注意：题目的输入数据合法。<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">                Scanner sc = new Scanner(System.in);</span><br><span class="line">                System.out.println(&quot;请输入三角形的边长：&quot;);</span><br><span class="line">                double a = sc.nextDouble();</span><br><span class="line">                System.out.println(&quot;请输入三角形的边长：&quot;);</span><br><span class="line">                double b = sc.nextDouble();</span><br><span class="line">                System.out.println(&quot;请输入三角形的边长：&quot;);</span><br><span class="line">                double c = sc.nextDouble();</span><br><span class="line"> </span><br><span class="line">                perimeter(a, b, c);</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            /**</span><br><span class="line">             * 输入三个数，分别是三角形的三条边 a，b，c，请你编程求出该三角形周长。</span><br><span class="line">             *</span><br><span class="line">             * @param a</span><br><span class="line">             *            三角形的边长</span><br><span class="line">             * @param b</span><br><span class="line">             *            三角形的边长</span><br><span class="line">             * @param c</span><br><span class="line">             *            三角形的边长</span><br><span class="line">             * @return 三角形的周长</span><br><span class="line">             */</span><br><span class="line">            public static double perimeter(double a, double b, double c) &#123;</span><br><span class="line">                double C = 0;</span><br><span class="line">                if (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a) &#123;</span><br><span class="line">                    C = a + b + c;</span><br><span class="line">                    System.out.println(&quot;三角形的周长为：&quot; + C);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    System.out.println(&quot;您输入的边长不能构成三角形&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                return C;</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J1-15《英语辅导系统》关键算法"><a href="#J1-15《英语辅导系统》关键算法" class="headerlink" title="J1-15《英语辅导系统》关键算法"></a>J1-15《英语辅导系统》关键算法</h2><h3 id="任务一：实现趣味英语出题序号关键算法（30-分）"><a href="#任务一：实现趣味英语出题序号关键算法（30-分）" class="headerlink" title="任务一：实现趣味英语出题序号关键算法（30 分）"></a>任务一：实现趣味英语出题序号关键算法（30 分）</h3><p>有一个整型偶数 n(2&lt;=  n  &lt;=10000)代表题号,你要做的是：先把 1 到 n 中的所有奇数从小到大输出，再把所有的偶数从小到大输出，该顺序即为出题顺序。<br>注意：奇数和偶数的输出各占一行，每个数字后面跟随一个空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import java.util.List;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line">*有一个整型偶数 n(2&lt;= n &lt;=10000)代表警员总数,</span><br><span class="line">*把1 到 n 中的</span><br><span class="line">*所有奇数从小到大输出</span><br><span class="line">*所有的偶数从小到大输出</span><br><span class="line">*奇数和偶数的输出各占一行，每个数字后面跟随一个空格</span><br><span class="line">*/</span><br><span class="line">public class Task1 &#123;</span><br><span class="line">         public static void main(String[] args) &#123;</span><br><span class="line">                System.out.println(&quot;奇数：&quot;);</span><br><span class="line">                int n = 10000;</span><br><span class="line">                for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                    if(i%2!=0)&#123;</span><br><span class="line">                        if (i&lt;n-1)</span><br><span class="line">                             System.out.print(i+&quot;\t&quot;);</span><br><span class="line">                        else</span><br><span class="line">                             System.out.print(i);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println();</span><br><span class="line">                System.out.println(&quot;偶数：&quot;);</span><br><span class="line">                for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">                    if(i%2==0)&#123;</span><br><span class="line">                        if (i&lt;n-1)</span><br><span class="line">                             System.out.print(i+&quot;\t&quot;);</span><br><span class="line">                        else</span><br><span class="line">                             System.out.print(i);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务二：实现统计非数字功能关键算法（30-分）"><a href="#任务二：实现统计非数字功能关键算法（30-分）" class="headerlink" title="任务二：实现统计非数字功能关键算法（30 分）"></a>任务二：实现统计非数字功能关键算法（30 分）</h3><p>对于给定的一个字符串，统计其中非数字字符出现的次数。<br>例如：输入：Ab(&amp;%123)  输出：6<br>注意：使用循环和判断语句实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package package12;</span><br><span class="line"> </span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int count=0;</span><br><span class="line">        System.out.print(&quot;请输入一个字符串:&quot;);</span><br><span class="line">        Scanner sc=new Scanner(System.in);</span><br><span class="line">        String str=sc.nextLine();</span><br><span class="line">        char[] chs=str.toCharArray();</span><br><span class="line">        for(int i=0;i&lt;chs.length;i++)</span><br><span class="line">            if(chs[i]&lt;&apos;0&apos;||chs[i]&gt;&apos;9&apos;)</span><br><span class="line">                    count++;   </span><br><span class="line">        System.out.println(&quot;该字符串中非数字字符出现次数为:&quot;+count);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务三：实现趣味英语试题-3-关键算法（30-分）"><a href="#任务三：实现趣味英语试题-3-关键算法（30-分）" class="headerlink" title="任务三：实现趣味英语试题 3 关键算法（30 分）"></a>任务三：实现趣味英语试题 3 关键算法（30 分）</h3><p>编写一个程序实现统计一串字符串中的英文小写字母个数！<br>例如：输入“axZvnNgOuyi”，得到的值应该是 8；<br>注意：使用分支语句实现，且有输入输出，直接输出不计分<br>（2）作品提交要求见本模块附录 1<br>（3）实施条件要求见本模块附录 2<br>（4）评价标准见本模块附录 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">/*</span><br><span class="line">使用 sort 方法实现</span><br><span class="line">*/</span><br><span class="line"> </span><br><span class="line">public class Task3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;输入n:&quot;);</span><br><span class="line">        String n = s.nextLine();</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (int i = 0; i &lt; n.length(); i++)&#123;</span><br><span class="line">            char sig = n.charAt(i);</span><br><span class="line">            if (Character.isLowerCase(sig)) //判读小写</span><br><span class="line">                count++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>答案来源：<a href="https://www.cnblogs.com/xiaoqianbook/p/9609782.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaoqianbook/p/9609782.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/试题/" rel="tag"><i class="fa fa-tag"></i> 试题</a>
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/18/模块二  数据库设计/" rel="prev" title="模块二 数据库设计">
+                模块二 数据库设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/725f8fcc9a8f418596015e397d26f477!400x400.jpeg" alt="山谷">
+            
+              <p class="site-author-name" itemprop="name">山谷</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-1《小学生数学辅助学习系统》"><span class="nav-number">1.</span> <span class="nav-text">J1-1《小学生数学辅助学习系统》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现趣味试题-1-的关键算法（30-分）"><span class="nav-number">1.1.</span> <span class="nav-text">任务一：实现趣味试题 1 的关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现乘法口诀助记功能的关键算法（30-分）"><span class="nav-number">1.2.</span> <span class="nav-text">任务二：实现乘法口诀助记功能的关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现趣味试题-2-关键算法（30-分）"><span class="nav-number">1.3.</span> <span class="nav-text">任务三：实现趣味试题 2 关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-2《帮你算系统》关键算法"><span class="nav-number">2.</span> <span class="nav-text">J1-2《帮你算系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现平均成绩计算功能的关键算法（30-分）"><span class="nav-number">2.1.</span> <span class="nav-text">任务一：实现平均成绩计算功能的关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现阶乘计算功能关键算法（30-分）"><span class="nav-number">2.2.</span> <span class="nav-text">任务二：实现阶乘计算功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现前项列和计算功能关键算法（30-分）"><span class="nav-number">2.3.</span> <span class="nav-text">任务三：实现前项列和计算功能关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-3《网络选拔赛题库系统》关键算法"><span class="nav-number">3.</span> <span class="nav-text">J1-3《网络选拔赛题库系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现平均成绩计算功能的关键算法（30-分）-1"><span class="nav-number">3.1.</span> <span class="nav-text">任务一：实现平均成绩计算功能的关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现统计问题关键算法（30-分）"><span class="nav-number">3.2.</span> <span class="nav-text">任务三：实现统计问题关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-4《智能统计系统》关键算法"><span class="nav-number">4.</span> <span class="nav-text">J1-4《智能统计系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现评分计算功能关键算法（30-分）"><span class="nav-number">4.1.</span> <span class="nav-text">任务一：实现评分计算功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现小球反弹问题关键算法（30-分）"><span class="nav-number">4.2.</span> <span class="nav-text">任务二：实现小球反弹问题关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现打印中国结图案关键算法（30-分）"><span class="nav-number">4.3.</span> <span class="nav-text">任务三：实现打印中国结图案关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-5《统计问题处理系统》关键算法"><span class="nav-number">5.</span> <span class="nav-text">J1-5《统计问题处理系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现统计今天是该月的有多少天关键算法（30-分）"><span class="nav-number">5.1.</span> <span class="nav-text">任务一：实现统计今天是该月的有多少天关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现统计纸片对折关键算法（30-分）"><span class="nav-number">5.2.</span> <span class="nav-text">任务二：实现统计纸片对折关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现统计同构数关键算法（30-分）"><span class="nav-number">5.3.</span> <span class="nav-text">任务三：实现统计同构数关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-6《儿童智力游戏》关键算法"><span class="nav-number">6.</span> <span class="nav-text">J1-6《儿童智力游戏》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现堆积木游戏功能关键算法（30-分）"><span class="nav-number">6.1.</span> <span class="nav-text">任务一：实现堆积木游戏功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现抓娃娃游戏功能关键算法（30-分）"><span class="nav-number">6.2.</span> <span class="nav-text">任务二：实现抓娃娃游戏功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现算数游戏功能关键算法（30-分）"><span class="nav-number">6.3.</span> <span class="nav-text">任务三：实现算数游戏功能关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-7《商品销售系统》关键算法"><span class="nav-number">7.</span> <span class="nav-text">J1-7《商品销售系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现打折功能关键算法（30-分）"><span class="nav-number">7.1.</span> <span class="nav-text">任务一：实现打折功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现查询功能关键算法（30-分）"><span class="nav-number">7.2.</span> <span class="nav-text">任务二：实现查询功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现停电停多久问题关键算法（30-分）"><span class="nav-number">7.3.</span> <span class="nav-text">任务三：实现停电停多久问题关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-8《成绩分析系统》关键算法"><span class="nav-number">8.</span> <span class="nav-text">J1-8《成绩分析系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现成绩等级划分功能关键算法（30-分）"><span class="nav-number">8.1.</span> <span class="nav-text">任务一：实现成绩等级划分功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现冒泡游戏功能关键算法（30-分）"><span class="nav-number">8.2.</span> <span class="nav-text">任务二：实现冒泡游戏功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现数列求和功能关键算法（30-分）"><span class="nav-number">8.3.</span> <span class="nav-text">任务三：实现数列求和功能关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-9《字符处理系统》关键算法"><span class="nav-number">9.</span> <span class="nav-text">J1-9《字符处理系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现查数功能关键算法（30-分）"><span class="nav-number">9.1.</span> <span class="nav-text">任务一：实现查数功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现统计字符数量功能关键算法（30-分）"><span class="nav-number">9.2.</span> <span class="nav-text">任务二：实现统计字符数量功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现人工湖关键算法（30分）"><span class="nav-number">9.3.</span> <span class="nav-text">任务三：实现人工湖关键算法（30分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-10《手机号码查询系统》关键算法"><span class="nav-number">10.</span> <span class="nav-text">J1-10《手机号码查询系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现手机号计数功能关键算法（30-分）"><span class="nav-number">10.1.</span> <span class="nav-text">任务一：实现手机号计数功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现连号判断功能关键算法（30-分）"><span class="nav-number">10.2.</span> <span class="nav-text">任务二：实现连号判断功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现统计非数字功能关键算法（30-分）"><span class="nav-number">10.3.</span> <span class="nav-text">任务三：实现统计非数字功能关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-11《图形打印系统》关键算法"><span class="nav-number">11.</span> <span class="nav-text">J1-11《图形打印系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现打印功能-1-关键算法（30-分）"><span class="nav-number">11.1.</span> <span class="nav-text">任务一：实现打印功能 1 关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现打印功能-2-关键算法（30-分）"><span class="nav-number">11.2.</span> <span class="nav-text">任务二：实现打印功能 2 关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：求前-n-项之和功能关键算法（30-分）"><span class="nav-number">11.3.</span> <span class="nav-text">任务三：求前 n 项之和功能关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-12《歌手大赛系统》关键算法"><span class="nav-number">12.</span> <span class="nav-text">J1-12《歌手大赛系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现计算平均分功能关键算法（30-分）"><span class="nav-number">12.1.</span> <span class="nav-text">任务一：实现计算平均分功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现查数功能关键算法（30-分）"><span class="nav-number">12.2.</span> <span class="nav-text">任务二：实现查数功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现趣味英语试题-1-关键算法（30-分）"><span class="nav-number">12.3.</span> <span class="nav-text">任务三：实现趣味英语试题 1 关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-13《市场分析系统》关键算法"><span class="nav-number">13.</span> <span class="nav-text">J1-13《市场分析系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现销售分析功能关键算法（30-分）"><span class="nav-number">13.1.</span> <span class="nav-text">任务一：实现销售分析功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现销售量分析功能关键算法（30-分）"><span class="nav-number">13.2.</span> <span class="nav-text">任务二：实现销售量分析功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现市场调查数据的恢复功能关键算法（30-分）"><span class="nav-number">13.3.</span> <span class="nav-text">任务三：实现市场调查数据的恢复功能关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-14《几何图形公式记忆系统》关键算法"><span class="nav-number">14.</span> <span class="nav-text">J1-14《几何图形公式记忆系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现图形计算功能-1-关键算法（30-分）"><span class="nav-number">14.1.</span> <span class="nav-text">任务一：实现图形计算功能 1 关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现图形计算功能2关键算法（30-分）"><span class="nav-number">14.2.</span> <span class="nav-text">任务二：实现图形计算功能2关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现图形计算功能-3-关键算法（30-分）"><span class="nav-number">14.3.</span> <span class="nav-text">任务三：实现图形计算功能 3 关键算法（30 分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J1-15《英语辅导系统》关键算法"><span class="nav-number">15.</span> <span class="nav-text">J1-15《英语辅导系统》关键算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务一：实现趣味英语出题序号关键算法（30-分）"><span class="nav-number">15.1.</span> <span class="nav-text">任务一：实现趣味英语出题序号关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务二：实现统计非数字功能关键算法（30-分）"><span class="nav-number">15.2.</span> <span class="nav-text">任务二：实现统计非数字功能关键算法（30 分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务三：实现趣味英语试题-3-关键算法（30-分）"><span class="nav-number">15.3.</span> <span class="nav-text">任务三：实现趣味英语试题 3 关键算法（30 分）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">山谷</span>
+
+  
+</div>
+
+
+  <!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</body>
+</html>
+  <!-- 页面点击小桃心-->
+  <script type="text/javascript" src="/js/src/love.js"></script>
